@@ -1,0 +1,124 @@
+---
+title: "Abalone"
+subtitle: "Lab 1"
+author: "Brendan Alexander"
+date: "9/27/2019"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    code_folding: hide
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Import the data
+```{r results=FALSE}
+data <- read.table("abalone.data",sep = ",")
+head(data)
+names(data) <- c("sex","length","diameter", "height", "whole", "shucked", "viscera", "shell", "rings")
+head(data)
+pairs(data)
+```
+
+# Week 1
+
+**Team lead presenting:** Madsen (grp 3)
+
+## Proposal (1-3PM)
+
+1. Height: Outlier issue
+    - check for outliers
+    - Pulled 2 outliers from height
+1. Check pairs again
+  
+
+```{r}
+data1 <- data[-c(2052,1418),]
+pairs(data1)
+```
+
+Suggestions:
+
+**Group 1**
+
+- Stepwise regression to evaluate all the variables
+- Remove outliers from weight
+- Reconsider sex as: mature vs immature
+
+
+**Group 2**
+
+- Sex as a dummy variable?
+- Don't want to kill animals, stepwise regression, 
+    - How to estimate weights without killing?
+    - Use whole weight, regress on shucked viscera and shell
+        - derived variables from the weight
+    
+**Group 4**
+
+- Correlations first, with `ring`
+    - diameter has a strong correlation
+    - combine length, diameter and height, make a derived variable
+
+# Week 1: The proposal (3-5)
+
+## Proposal
+
+
+1. Inspect correlations
+    - sex length and diameter highest correlation, no death
+    - 
+1. Box plots
+    - comparative boxplots for the different sex categories
+1. Outliers?
+    - hov?
+        - if not homogeneous, transform the data
+1. fit a model
+    - rings (or age) ~ (nothing specified)
+1. Derived variable --> mature = male + female vs infant
+    - boxPlot against length and diameter
+1. Derived variable --> volume = length*diameter*height
+1. Multiple regression: whole ~ shucked + viscera + shell
+
+
+# Week 2: Fulfilling the proposal, collaborating with git
+
+You all had several good initial analysis ideas.
+Unfortunately, your programmer was fired.
+You have to code it yourself.
+
+Let's break the problem down into the following components:
+
+1. Data cleaning
+2. Variable manipulation
+3. 
+
+## Data cleaning
+
+Please removed the 2 outliers from the `height` variable and re-run the `pairs` plot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,7 +23,7 @@ data <- read.table("abalone.data",sep = ",")
 head(data)
 names(data) <- c("sex","length","diameter", "height", "whole", "shucked", "viscera", "shell", "rings")
 head(data)
-pairs(data)
+# pairs(data)
 ```
 
 # Week 1
@@ -66,14 +66,11 @@ Suggestions:
     - diameter has a strong correlation
     - combine length, diameter and height, make a derived variable
 
-# Week 1: The proposal (3-5)
-
 ## Proposal
 
 
 1. Inspect correlations
     - sex length and diameter highest correlation, no death
-    - 
 1. Box plots
     - comparative boxplots for the different sex categories
 1. Outliers?
@@ -96,14 +93,39 @@ You have to code it yourself.
 Let's break the problem down into the following components:
 
 1. Data cleaning
-2. Variable manipulation
-3. 
+    - Please removed the 2 outliers from the `height` variable and re-run the `pairs` plot.
+1. Variable manipulation
+    - Create a new variable "mature" based on "sex"
+        - Male and female are mature, infants are not
+    - Create a new variable "volume" based on "length", "diameter", and "height"
+1. Visualize the data
+    - Plot metrics by sex
+1. Model fit: Can we predict shucked, viscera, and shell weight based on whole weight?
+1. Model fit: Perform an initial model fit for the data.
+    - You can use a `stepwise` procedure if you like
+    - You can use `lm` or `glm`
+
+Groups are the same as last time.
+Group leaders are now:
+
+1. Yuting
+1. Jenny
+1. Fik
+1. Allen
+
+Group leaders are responsible for reporting their analysis.
+
 
 ## Data cleaning
 
-Please removed the 2 outliers from the `height` variable and re-run the `pairs` plot.
 
+## Variable manipulation
 
+## Visualize the data
+
+## Model fit 1: Modeling the weight variables
+
+## Model fit 2: Initial rings fit
 
 
 
